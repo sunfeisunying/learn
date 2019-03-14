@@ -3,6 +3,9 @@ package com.example.learningservice.mapper;
 
 import com.baomidou.mybatisplus.core.mapper.BaseMapper;
 import com.example.learningservice.model.Group;
+import com.example.learningservice.vo.GroupVo;
+
+import java.util.List;
 
 /**
  * <p>
@@ -13,5 +16,7 @@ import com.example.learningservice.model.Group;
  * @since 2019-02-24
  */
 public interface GroupMapper extends BaseMapper<Group> {
+
+    List<GroupVo> selectGroupList(Integer parentId);
 
 }

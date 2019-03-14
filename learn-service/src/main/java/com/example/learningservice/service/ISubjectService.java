@@ -13,4 +13,7 @@ import com.baomidou.mybatisplus.extension.service.IService;
  */
 public interface ISubjectService extends IService<Subject> {
 
+    //    查询科目列表接口
+
+
 }

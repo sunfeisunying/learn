@@ -13,4 +13,12 @@ import com.baomidou.mybatisplus.extension.service.IService;
  */
 public interface IExamService extends IService<Exam> {
 
+    //写入考试记录表（每次创建考试之后触发）
+
+
+    //查询单条
+
+
+    //查询批量
+
 }

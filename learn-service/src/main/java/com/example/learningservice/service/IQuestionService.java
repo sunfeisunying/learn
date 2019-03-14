@@ -13,4 +13,12 @@ import com.baomidou.mybatisplus.extension.service.IService;
  */
 public interface IQuestionService extends IService<Question> {
 
+    //根据ids查询题目
+
+    //根据id查询题目和答案结果集
+
+
+//    批量录入题目（不急）
+
+
 }

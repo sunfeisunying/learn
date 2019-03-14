@@ -13,4 +13,10 @@ import com.baomidou.mybatisplus.extension.service.IService;
  */
 public interface IGroupQuestionRelationService extends IService<GroupQuestionRelation> {
 
+    //    入错题库（组）接口
+
+//    按组（科目、考试）查询题目接口
+
+
+
 }
