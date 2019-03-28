@@ -1,8 +1,7 @@
-package com.example.learningservice.controller;
+package com.example.controller;
 
 
 import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
-import com.baomidou.mybatisplus.extension.api.R;
 import com.example.learningservice.model.Question;
 import com.example.learningservice.service.IQuestionService;
 import com.example.learningservice.vo.Result;
@@ -11,7 +10,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.util.StringUtils;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
-
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -40,7 +38,6 @@ public class QuestionController {
 
         QueryWrapper<Question> queryWrapper = new QueryWrapper<>();
         final Collection<Question> questions = questionService.listByIds(Arrays.asList(split));
-
         return Result.ok(questions);
 
     }
@@ -50,9 +47,13 @@ public class QuestionController {
     @RequestMapping(value = "" , method = RequestMethod.GET)
     public Result findQuestionById(@PathVariable Integer id){
 
+
         return Result.ok();
 
     }
+
+//    随机抽取一定数量的题目（有范围）
+
 
 
 //    批量录入题目（不急）

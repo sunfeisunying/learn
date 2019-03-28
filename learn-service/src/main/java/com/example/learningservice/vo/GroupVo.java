@@ -4,6 +4,11 @@ import com.baomidou.mybatisplus.annotation.IdType;
 import com.baomidou.mybatisplus.annotation.TableId;
 import com.example.learningservice.model.Group;
 
+import lombok.Builder;
+import lombok.Data;
+import lombok.ToString;
+import lombok.experimental.Accessors;
+
 /**
  * @CLassName GroupVo
  * @Description TODO
@@ -11,12 +16,13 @@ import com.example.learningservice.model.Group;
  * @Date 2019/3/14 14:18
  * @Version 1.0
  */
+@Data
+@Accessors(chain = true)
 public class GroupVo {
 
     /**
      * 组编码
      */
-    @TableId(value = "id", type = IdType.AUTO)
     private Long id;
 
     /**

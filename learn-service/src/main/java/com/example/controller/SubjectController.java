@@ -1,8 +1,7 @@
-package com.example.learningservice.controller;
+package com.example.controller;
 
 
 import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
-import com.baomidou.mybatisplus.extension.api.R;
 import com.example.learningservice.model.Subject;
 import com.example.learningservice.service.ISubjectService;
 import com.example.learningservice.vo.Result;
@@ -10,7 +9,6 @@ import com.example.learningservice.vo.Result;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
-
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 

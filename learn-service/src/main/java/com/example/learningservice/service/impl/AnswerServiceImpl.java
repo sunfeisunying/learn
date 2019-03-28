@@ -5,6 +5,7 @@ import com.example.learningservice.model.Answer;
 import com.example.learningservice.service.IAnswerService;
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 /**
  * <p>
@@ -15,9 +16,7 @@ import org.springframework.stereotype.Service;
  * @since 2019-02-24
  */
 @Service
+@Transactional
 public class AnswerServiceImpl extends ServiceImpl<AnswerMapper, Answer> implements IAnswerService {
-
-
-
 
 }
