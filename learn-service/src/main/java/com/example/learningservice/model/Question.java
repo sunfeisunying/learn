@@ -32,6 +32,11 @@ public class Question extends Model<Question> {
          @TableId(value = "id", type = IdType.AUTO)
     private Long id;
 
+    /**
+     * 父级题干id
+     */
+    private Long parent_id;
+
         /**
      * 问题简述
      */
@@ -71,6 +76,9 @@ public class Question extends Model<Question> {
      * 更新时间
      */
          private LocalDateTime updateTime;
+
+         private Byte field_type;
+         private Byte type;
 
 
     @Override

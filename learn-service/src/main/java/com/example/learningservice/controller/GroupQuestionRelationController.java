@@ -1,4 +1,4 @@
-package com.example.controller;
+package com.example.learningservice.controller;
 
 
 import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
@@ -24,14 +24,14 @@ import java.util.List;
  * @since 2019-02-24
  */
 @RestController
-@RequestMapping("/record/groupQuestionRelation")
+@RequestMapping("/learn/groupQuestionRelation")
 public class GroupQuestionRelationController {
 
     @Autowired
     private IGroupQuestionRelationService groupQuestionRelationService;
 
 //    入错题库（组）接口
-    @RequestMapping(value = "" , method = RequestMethod.POST)
+    @RequestMapping(value = "/add" , method = RequestMethod.POST)
     public Result createRelation(@RequestBody GroupQuestionRelation groupQuestionRelation){
         final boolean save = groupQuestionRelationService.save(groupQuestionRelation);
         if(save){
@@ -44,7 +44,8 @@ public class GroupQuestionRelationController {
 
 
 //    按组（科目、考试）查询题目接口
-    @RequestMapping(value = "" , method = RequestMethod.GET)
+/*
+    @RequestMapping(value = "/" , method = RequestMethod.GET)
     public Result createRelation(@PathVariable Integer classifyId, @PathVariable Integer type){
         QueryWrapper<GroupQuestionRelation> queryWrapper = new QueryWrapper<>();
         queryWrapper.eq("classifyId", classifyId);
@@ -52,6 +53,7 @@ public class GroupQuestionRelationController {
         final List<GroupQuestionRelation> list = groupQuestionRelationService.list(queryWrapper);
         return Result.ok(list);
     }
+*/
 
 
 

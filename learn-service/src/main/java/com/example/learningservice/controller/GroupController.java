@@ -1,4 +1,4 @@
-package com.example.controller;
+package com.example.learningservice.controller;
 
 import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
 import com.example.learningservice.model.Group;
@@ -7,6 +7,7 @@ import com.example.learningservice.vo.Result;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
@@ -22,7 +23,7 @@ import java.util.List;
  * @since 2019-02-24
  */
 @RestController
-@RequestMapping("/record/group")
+@RequestMapping("/learn/group")
 public class GroupController {
 
     @Autowired
@@ -40,7 +41,16 @@ public class GroupController {
     }
 
 //    批量录入组信息接口（不急）
+    @RequestMapping(value = "/add" , method = RequestMethod.POST)
+    public Result createQuestion(@RequestBody Group group){
 
+        final boolean save = groupService.save(group);
+        if(save){
+            return Result.ok();
+        }else {
+            return  Result.fail();
+        }
+    }
 
 }
 

@@ -1,4 +1,4 @@
-package com.example.controller;
+package com.example.learningservice.controller;
 
 
 import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
@@ -50,7 +50,7 @@ public class ExamController {
     }
 
     //查询批量
-    @RequestMapping(value = "" , method = RequestMethod.GET)
+    @RequestMapping(value = "/findExamList" , method = RequestMethod.GET)
     public Result<List<Exam>> findExamList(){
         QueryWrapper<Exam> queryWrapper = new QueryWrapper<>();
         final List<Exam> list = examService.list(queryWrapper);

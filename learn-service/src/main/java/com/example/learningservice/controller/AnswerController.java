@@ -1,4 +1,4 @@
-package com.example.controller;
+package com.example.learningservice.controller;
 
 
 import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
@@ -21,7 +21,7 @@ import java.util.List;
  * @since 2019-02-24
  */
 @RestController
-@RequestMapping("/record/answer")
+@RequestMapping("/learn/answer")
 public class AnswerController {
 
     @Autowired
@@ -30,7 +30,7 @@ public class AnswerController {
 
 
     //正确答案用标识字段 根据问题id查一个问题的所有答案
-    @RequestMapping(value = "" , method = RequestMethod.GET)
+    @RequestMapping(value = "/findAswersByQid" , method = RequestMethod.GET)
     public List<Answer> findAswersByQid(Integer id ){
         QueryWrapper<Answer> queryWrapper = new QueryWrapper<>();
         queryWrapper

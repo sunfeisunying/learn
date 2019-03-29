@@ -5,6 +5,7 @@
     <!-- 通用查询映射结果 -->
     <resultMap id="BaseResultMap" type="com.example.learningservice.model.Question">
         <id column="id" property="id" />
+        <result column="parent_id" property="parentId" />
         <result column="question_desc" property="questionDesc" />
         <result column="subject_id" property="subjectId" />
         <result column="question_content" property="questionContent" />
