@@ -5,7 +5,9 @@ import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
 import com.example.learningservice.model.Answer;
 import com.example.learningservice.service.IAnswerService;
 
+import com.example.learningservice.vo.Result;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
@@ -41,6 +43,16 @@ public class AnswerController {
 
 
     //批量录入答案接口
+    @RequestMapping(value = "/add" , method = RequestMethod.POST)
+    public Result createQuestion(@RequestBody Answer answer){
+
+        final boolean save = answerService.save(answer);
+        if(save){
+            return Result.ok();
+        }else {
+            return  Result.fail();
+        }
+    }
 
 }
 

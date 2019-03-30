@@ -1,56 +1,49 @@
 package com.example.learningservice.model;
 
 import com.baomidou.mybatisplus.annotation.IdType;
-import com.baomidou.mybatisplus.annotation.TableId;
 import com.baomidou.mybatisplus.extension.activerecord.Model;
-
-import java.io.Serializable;
+import com.baomidou.mybatisplus.annotation.TableId;
 import java.time.LocalDateTime;
-
+import java.io.Serializable;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
 import lombok.experimental.Accessors;
 
 /**
  * <p>
- * 问题表
+ * 答案解析表
  * </p>
  *
  * @author SunYing
- * @since 2019-02-24
+ * @since 2019-03-31
  */
 @Data
 @EqualsAndHashCode(callSuper = false)
 @Accessors(chain = true)
-public class Question extends Model<Question> {
+public class LearnExplain extends Model<LearnExplain> {
 
     private static final long serialVersionUID = 1L;
 
         /**
-     * 问题编码
+     * 解析编码
      */
          @TableId(value = "id", type = IdType.AUTO)
     private Long id;
 
-    /**
-     * 题目类型
+        /**
+     * 答案
      */
-    private Byte type;
+         private String answer;
 
         /**
-     * 问题简述
+     * 题目id
      */
-         private String questionDesc;
+         private Long questionId;
 
         /**
-     * 科目
+     * 解析内容
      */
-         private Long subjectId;
-
-        /**
-     * 题干内容
-     */
-         private String questionContent;
+         private String explainContent;
 
         /**
      * 是否删除 0：未删除、1：已删除
@@ -76,8 +69,6 @@ public class Question extends Model<Question> {
      * 更新时间
      */
          private LocalDateTime updateTime;
-
-
 
 
     @Override
